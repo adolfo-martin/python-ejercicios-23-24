@@ -11,6 +11,11 @@ def traducir_espaniol_ingles(palabra):
         if colores_espaniol[i] == palabra:
             return colores_ingles[i]
 
+print(traducir_espaniol_ingles('Blanco'))
 
 
-print(traducir_espaniol_ingles('Negro'))
+# print(colores_espaniol[0])
+# print(colores_ingles[0])
+# print(colores_frances[0])
+# print(colores_aleman[0])
+
