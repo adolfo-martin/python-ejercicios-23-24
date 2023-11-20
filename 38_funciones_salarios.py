@@ -61,4 +61,14 @@ def devolver_cantidad_salarios_inferior_media(salarios):
 print(devolver_cantidad_salarios_inferior_media(todos_los_salarios))
 
 
+def devolver_salarios_superior_o_igual_media(salarios):
+    salario_medio = devolver_salario_medio(salarios)
+    salarios_mayores = []
 
+    for salario in salarios:
+        if salario >= salario_medio:
+            salarios_mayores.append(salario)
+
+    return salarios_mayores
+
+print(devolver_salarios_superior_o_igual_media(todos_los_salarios))
