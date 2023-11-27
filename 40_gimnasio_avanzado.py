@@ -1,4 +1,6 @@
 import os
+# from operator import itemgetter
+
 os.system('cls')
 
 NOMBRE = 0
@@ -31,6 +33,34 @@ def devolver_nombre_persona_mas_alta(personas):
 
 print(devolver_nombre_persona_mas_alta(clientes_gimnasio))
 
-
 def calcular_masa_corporal(masa_kilogramos, estatura_metros):
     return masa_kilogramos / estatura_metros**2
+
+
+print(calcular_masa_corporal(68, 165/100))
+
+def mostrar_masas_corporales(clientes):
+    print('Las masas corporales son:')
+
+    for cliente in clientes:
+        masa_corporal = calcular_masa_corporal(cliente[MASA], cliente[ALTURA] / 100)
+        print(f'La masa corporal de {cliente[NOMBRE]} es {masa_corporal}')
+
+
+os.system('cls')
+# mostrar_masas_corporales(clientes_gimnasio)
+
+def mostrar_masas_corporales_ordenadas(clientes):
+    masas_corporales = []
+
+    for cliente in clientes:
+        masa_corporal = calcular_masa_corporal(cliente[MASA], cliente[ALTURA] / 100)
+        masas_corporales.append( [masa_corporal, cliente[NOMBRE]] )
+
+    masas_corporales.sort()
+    print('Las masas corporales son:')
+    for cliente in masas_corporales:
+        print(f'La masa corporal de {cliente[1]} es {cliente[0]:0.2f}')
+
+
+mostrar_masas_corporales_ordenadas(clientes_gimnasio)
