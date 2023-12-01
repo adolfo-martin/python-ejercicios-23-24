@@ -35,7 +35,7 @@ datos_fiscales_ciudades_pequenias = [
 ]
 
 
-def juntar_datos(datos_poblacionales, datos_fiscales):
+def juntar_datos_poblacionales_y_fiscales(datos_poblacionales, datos_fiscales):
     datos_unidos = []
 
     for dato_pob in datos_poblacionales:
@@ -47,5 +47,19 @@ def juntar_datos(datos_poblacionales, datos_fiscales):
 
     return datos_unidos
 
-print(juntar_datos(datos_poblacionales_ciudades_grandes, datos_fiscales_ciudades_grandes))
-print(juntar_datos(datos_poblacionales_ciudades_pequenias, datos_fiscales_ciudades_pequenias))
+
+def juntar_todos_los_datos(datos_poblacionales_ciudades_grandes, datos_fiscales_ciudades_grandes, datos_poblacionales_ciudades_pequenias, datos_fiscales_ciudades_pequenias):
+    datos = []
+    datos_grandes = juntar_datos_poblacionales_y_fiscales(datos_poblacionales_ciudades_grandes, datos_fiscales_ciudades_grandes)
+    datos_pequenias = juntar_datos_poblacionales_y_fiscales(datos_poblacionales_ciudades_pequenias, datos_fiscales_ciudades_pequenias)
+
+    for dato in datos_grandes:
+        datos.append(dato)
+
+    for dato in datos_pequenias:
+        datos.append(dato)
+
+    return datos
+
+
+print(juntar_todos_los_datos(datos_poblacionales_ciudades_grandes, datos_fiscales_ciudades_grandes, datos_poblacionales_ciudades_pequenias, datos_fiscales_ciudades_pequenias))
