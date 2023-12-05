@@ -1,3 +1,6 @@
+import os
+os.system('cls')
+
 datos_poblacionales_ciudades_grandes = [
     ['Cáceres',   17001,  185294, 3162876],
     ['La Coruña', 42001,  719458, 2371974],
